@@ -1,0 +1,50 @@
+8.Write a program to create strings and display the conversion of string to StringBuffer and StringBuilder.
+
+
+Ans 
+package OnlinePractice;
+
+class Convert {
+
+
+	public static void concat1(StringBuilder s2)
+	{
+		s2.append("Learning");
+	}
+
+	public static void concat2(StringBuffer s3)
+	{
+		s3.append("Learning");
+	}
+
+	public static void main(String[] args)
+	{
+	
+		String s1 = "simple";
+		
+		System.out.println("String: " + s1);
+
+		// String 1
+		StringBuilder s2 = new StringBuilder("simple ");
+
+		// Calling above defined method
+		concat1(s2);
+
+		// s2 is changed
+		System.out.println("StringBuilder: " + s2);
+
+		// String 3
+		StringBuffer s3 = new StringBuffer("simple ");
+
+		// Calling above defined method
+		concat2(s3);
+
+		// s3 is changed
+		System.out.println("StringBuffer: " + s3);
+	}
+}
+
+Output
+String: simple
+StringBuilder: simple Learning
+StringBuffer: simple Learning

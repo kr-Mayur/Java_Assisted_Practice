@@ -1,0 +1,24 @@
+3.Writing a program in Java to verify implementations of 
+methods and ways of calling a method .
+Ans 
+
+package OnlinePractice;
+import java.io.*;
+class CallMethod {	 
+
+void print()
+{
+ // display the output
+ System.out.println("Ways to calling a method");
+}
+public static void main(String[] args)
+{
+ // Creating instance of the class
+CallMethod ob = new CallMethod();
+// call the print method 
+ ob.print();
+}
+}
+
+Output
+Ways to calling a method

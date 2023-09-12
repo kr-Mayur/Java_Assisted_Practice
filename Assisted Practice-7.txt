@@ -1,0 +1,39 @@
+7.Writing a program in Java to verify the implementation of inner classes
+
+package OnlinePractice;
+
+
+class Outer {
+
+	
+	class Inner {
+
+		// show() method of inner class
+		public void show()
+		{
+
+			// Print statement
+			System.out.println("Inner Class run");
+		}
+	}
+}
+
+
+class InnerClass {
+
+	// Main driver method
+	public static void main(String[] args)
+	{
+
+		//  inner class object is created inside
+	
+		Outer.Inner in = new Outer().new Inner();
+
+		// Calling show() method
+		in.show();
+	}
+}
+
+
+Output
+Inner Class run

@@ -1,0 +1,61 @@
+2.Writing a program in Java to implement access modifiers
+Ans
+package OnlinePractice;
+
+
+public class AccessModifier{
+
+
+ public int publicField = 10;
+ 
+
+ private int privateField = 20;
+
+
+ protected int protectedField = 30;
+
+
+ int defaultField = 40;
+ 
+ 
+
+ 
+ // Public method can be access anywhere
+ public void publicMethod() {
+     System.out.println("call Public method ");
+ }
+
+ 
+ // Private method can only be accessed within this class
+ private void privateMethod() {
+     System.out.println("call Private method");
+ }
+ 
+
+ // Protected method can be accessed within this class and its subclasses
+ protected void protectedMethod() {
+     System.out.println("call Protected method");
+ }
+
+ 
+ // Default (package-private) method can be accessed within the same package
+ void defaultMethod() {
+     System.out.println("call Default method");
+ }
+
+ public static void main(String[] args) {
+	 AccessModifier a = new AccessModifier();
+
+     // Accessing fields and methods
+     System.out.println("Public Field: " + a.publicField);
+     System.out.println("Private Field: " + a.privateField); // This will result in a compile error.
+     System.out.println("Protected Field: " + a.protectedField);
+     System.out.println("Default Field: " + a.defaultField);
+     System.out.println();
+     a.publicMethod();
+     a.privateMethod(); 
+     a.protectedMethod();
+     a.defaultMethod();
+ }
+}
+

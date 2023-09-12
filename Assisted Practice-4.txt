@@ -1,0 +1,89 @@
+4. Writing a program in Java to verify the implementations of constructor types
+
+Ans 
+
+//Non-Parameterized constructor
+class Point{
+String st;
+int y;
+	 
+
+Point(){
+System.out.println("Non Parameterize Constructor");
+}
+}
+public class Test {
+public static void main(String[] args) {
+ Point p = new Point();
+}
+}
+
+output  
+Non Parameterize Constructor
+
+//Parameterized constructor
+class Student {
+ String name;
+ int age;
+ 
+ public void Print() {
+ System.out.println(this.name);
+ System.out.println(this.age);
+ }
+ Student(String name, int age) {
+ this.name = name;
+ this.age = age;
+ 
+ System.out.println("Parameterized construtor");
+ }
+}
+public class Test {
+public static void main(String[] args) {
+		
+ Student s = new Student("mayur" , 24);
+ s.Print();
+}
+}
+
+Output
+Parameterized construtor
+mayur
+24
+
+
+//Copy Constructor 
+class Student {
+ String name;
+ int age;
+ 
+ public void Print() {
+	System.out.println(this.name);
+	 System.out.println(this.age);
+ }
+ Student(Student s2) {
+ this.name = s2.name;
+ this.age = s2.age;
+ 
+ System.out.println("copy construtor");
+ }
+ 
+ Student(){
+	 	 
+ }
+}
+public class Test {
+public static void main(String[] args) {
+		
+
+ Student s1 = new Student();
+ s1.name = "mayur";
+ s1.age = 24;
+ Student s2 = new Student(s1);
+ s1.Print();
+}
+}
+
+output 
+copy construtor
+mayur
+24

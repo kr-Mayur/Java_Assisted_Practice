@@ -1,0 +1,25 @@
+9.Writing a program in Java to verify implementation of arrays
+
+Ans 
+
+package OnlinePractice;
+
+public class Array {
+	   public static void main(String args[]){
+	      int[] arr = {55, 45, 69, 44};
+	     
+	      System.out.println("Array contains the given element");
+	      for(int i = 0; i<arr.length; i++){
+	        
+	           System.out.println(arr[i]);
+	       
+	      }
+	   }
+	}
+
+output
+Array contains the given element
+55
+45
+69
+44

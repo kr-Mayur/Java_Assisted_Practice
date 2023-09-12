@@ -1,0 +1,27 @@
+10.Writing a program in Java to verify implementations of regular expressions
+
+Ans 
+
+package OnlinePractice;
+
+//Importing  java.util.regex package
+import java.util.regex.Pattern;
+
+
+class RegularExpressions {
+
+	// Main driver method
+	public static void main(String args[])
+	{
+
+		
+		System.out.println(Pattern.matches("simpleLearning", "simpleLearning"));
+
+		
+		System.out.println(Pattern.matches("simple", "learning"));
+	}
+}
+
+output
+true 
+false
