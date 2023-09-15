@@ -1,0 +1,67 @@
+1.Write a program in Java to create a thread by extending the ‘Thread’ class and by implementing the “Runnable” interface
+
+
+
+//Thread
+
+package Phase_One;
+
+import java.io.*;
+// Test is a class name 
+class Test extends Thread {
+	public void run()
+	{
+		System.out.print("Welcome to simple Leaning.");
+	}
+	public static void main(String[] args)
+	{
+		 // creating thread
+		Test g = new Test();
+		
+		// starting thread
+		g.start(); 
+	}
+}
+
+OutPut 
+
+Welcome to simple Leaning.
+
+
+
+
+
+
+
+
+//Runnable 
+
+package Phase_One;
+
+import java.io.*;
+class Test implements Runnable {
+	public static void main(String args[])
+	{
+		// create an object of Runnable
+		Test Test = new Test();
+
+		// pass the runnable reference to Thread
+		Thread t = new Thread(Test, "Runnable reference to Thread");
+
+		// start the thread
+		t.start();
+
+		// get the name of the thread
+		System.out.println(t.getName());
+	}
+	public void run()
+	{
+		System.out.println("Inside run method");
+	}
+}
+
+
+Output
+
+Runnable reference to Thread
+Inside run method

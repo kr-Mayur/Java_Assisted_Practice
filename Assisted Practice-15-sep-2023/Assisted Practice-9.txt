@@ -1,0 +1,57 @@
+9.Write a program in Java to resolve the diamond problem using OOPs’ concepts
+
+
+
+package Phase_One;
+
+//Define  interface 
+interface Animal {
+ void sound();
+}
+
+//Create two interfaces that inherit from Animal
+interface Dog extends Animal {
+ void bark();
+}
+
+interface Cat extends Animal {
+ void meow();
+}
+
+//Create a class that implements both Dog and Cat 
+class Pet implements Dog, Cat {
+
+ public void sound() {
+     System.out.println("Pet makes a sound");
+ }
+
+
+ public void bark() {
+     System.out.println("Dog barks");
+ }
+
+
+ public void meow() {
+     System.out.println("Cat meows");
+ }
+}
+
+public class DiamondOops  {
+ public static void main(String[] args) {
+	 // create an object 
+     Pet pet = new Pet();
+
+     // Call methods
+     pet.sound(); 
+     pet.bark(); 
+     pet.meow();  
+ }
+}
+
+
+Output
+
+Pet makes a sound
+Dog barks
+Cat meows
+

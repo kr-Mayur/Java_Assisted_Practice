@@ -1,0 +1,25 @@
+4.Write a program in Java to demonstrate try and catch
+
+package Phase_One;
+
+//class name Try_Catch 
+class Try_Catch {
+	public static void main(String[] args)
+	{
+		int a = 10, b = 5, c = 5, result;
+		try {
+			result = a / (b - c);
+			System.out.println("result" + result);
+		}
+
+		catch (ArithmeticException ae) {
+			System.out.println("Exception :Division by zero");
+		}
+
+	
+	}
+}
+
+Output
+
+Exception :Division by zero

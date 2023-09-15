@@ -1,0 +1,64 @@
+5. Writing a program in Java to throws, throw, finally, and custom exceptions in Java
+
+
+package Phase_One;
+
+
+//Custom Exception
+class MyExceptionHandling extends Exception {
+ public MyExceptionHandling(String message) {
+     super(message);
+ }
+}
+
+public class ExceptionHandling 
+{
+ public static void main(String[] args) 
+ {
+     try 
+     {
+         // custom exception
+         throwCustomException();
+
+       
+         int result = divide(10, 0);
+     } 
+     // catch arithmetic Exception
+     catch (ArithmeticException e) 
+     {
+         System.out.println("ArithmeticException: " + e.getMessage());
+     } 
+     
+     // catch Custom Exception
+     catch (MyExceptionHandling e) 
+     
+     {
+         System.out.println("Custom Exception: " + e.getMessage());
+     } 
+     
+     // run finally block , finally block is not a mandatory to used the program 
+     finally
+     {
+        
+         System.out.println("Finally block executed.");
+     }
+ }
+
+ 
+ static void throwCustomException() throws MyExceptionHandling 
+ {
+	 // throws an Custom exception
+     throw new MyExceptionHandling("Custom exception is run ");
+ }
+
+ // throws an Arithmetic Exception
+ static int divide(int a, int b) {
+     return a / b;
+ }
+}
+
+
+Output
+
+Custom Exception: Custom exception is run 
+Finally block executed.

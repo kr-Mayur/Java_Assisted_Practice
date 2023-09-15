@@ -1,0 +1,29 @@
+8.Write a program in Java to demonstrate the uses of classes, objects, and the object-oriented pillars in Java
+
+package Phase_One;
+
+public class Oops {
+	
+	static String Emp_name;
+	static float Emp_salary;
+
+	static void set(String n, float p) {
+		Emp_name = n;
+		Emp_salary = p;
+	}
+
+	static void get() {
+		System.out.println("Employee name is: " +Emp_name );
+		System.out.println("Employee Salary is: " + Emp_salary);
+	}
+
+	public static void main(String args[]) {
+		Oops.set("mayur", 10000.0f);
+		Oops.get();
+	}
+}
+
+Output
+
+Employee name is: mayur
+Employee Salary is: 10000.0
