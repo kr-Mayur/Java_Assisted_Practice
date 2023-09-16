@@ -1,0 +1,154 @@
+7.Writing a program in Java to create, read, update, and delete operations on the files in Java
+
+
+//Create 
+package Phase_One;
+
+import java.io.*;
+public class Create_File 
+{
+	public static void main(String[] args) 
+	{
+		File myFile = new File("mayur.txt");
+		try 
+		{
+			if(myFile.createNewFile()) 
+			{
+				System.out.println("File create Successfully...");
+			}
+			else {
+				System.out.println("error File creation");
+			}
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+Output
+error File creation
+
+
+
+//Append
+
+package File_Handling;
+
+import java.io.*;
+public class Append 
+{
+	public static void main(String[] args) 
+	{
+
+		String data ="Data is append \n";
+		try 
+		{
+			FileWriter output = new FileWriter("mayur.txt",true);
+			output.write(data);
+			System.out.println("Data Appended Successfully..\n");
+			output.close();
+		} 
+		catch (IOException e) 
+		{
+			System.out.println("file append error ... \n");
+		}
+	}
+}
+
+Output
+Data Appended Successfully..
+
+
+
+
+//write
+package File_Handling;
+
+import java.io.*;
+public class Write_File 
+{
+	public static void main(String[] args) 
+	{
+		String data ="Hey,My name is Mayur";
+		try 
+		{
+			FileWriter output = new FileWriter("mayur.txt");
+			output.write(data);
+			System.out.println("Data is write is  successfully");
+			output.close();
+		} 
+		catch (IOException e) {
+			System.out.println("File write error....");
+		}
+	}
+}
+
+
+Output :-
+Data is write is  successfully
+
+
+//Read file
+
+package File_Handling;
+
+import java.io.*;
+class Read_file
+{
+	public static void main(String[] args) throws IOException 
+	{
+		char[] data = new char[100];
+		try 
+		{
+			FileReader input = new FileReader("mayur.txt");
+			input.read(data);
+			System.out.println("Read a Data is received from a file \n");
+			System.out.println(data);
+			input.close();
+		} 
+		catch (FileNotFoundException e)
+		{
+			System.out.println("file read error...");
+		}
+	}
+}
+
+Output
+
+Read a Data is received from a file 
+
+Hey,My name is Mayur 
+
+
+
+
+// delete file
+
+package File_Handling;
+
+import java.io.*;
+import java.util.*;
+
+public class Delete_File 
+{
+	public static void main(String[] args)
+	{
+
+		String path="c:\\document\\";
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the File Name");
+		String filename=sc.next();
+		String finalpath=path+filename;
+		File c=new File(finalpath);
+
+		c.delete();
+		System.out.println("File Deleted");
+	}
+}
+
+Output
+Enter the File Name
+mayur
+File Deleted
