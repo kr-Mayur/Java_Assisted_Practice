@@ -1,0 +1,86 @@
+6.Write a program in Java to insert a new element in a sorted circular linked list
+
+package TwentySep;
+
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class SCLList {
+    private Node head;
+
+    public SCLList() {
+        this.head = null;
+    }
+
+    // Insert a new element into the sorted circular linked list
+    public void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+         // Circular reference to itself
+            head.next = head; 
+        } else if (data <= head.data) {
+            // If the new element is smaller than or equal to the head, insert at the beginning
+            newNode.next = head;
+            Node current = head;
+            while (current.next != head) {
+                current = current.next;
+            }
+            current.next = newNode;
+            head = newNode;
+        } else {
+            // Find the appropriate position to insert while maintaining sorted order
+            Node current = head;
+            while (current.next != head && current.next.data < data) {
+                current = current.next;
+            }
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    }
+
+    // Display the sorted circular linked list
+    public void display() {
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return;
+        }
+
+        Node current = head;
+        do {
+            System.out.print(current.data + " ");
+            current = current.next;
+        } while (current != head);
+
+        System.out.println();
+    }
+}
+
+public class CircularLinkedList {
+    public static void main(String[] args) {
+        SCLList sortList = new SCLList();
+
+        sortList.insert(5);
+        sortList.insert(2);
+        sortList.insert(8);
+        sortList.insert(1);
+        sortList.insert(6);
+      
+
+        System.out.println("Sorted Circular Linked List:");
+        sortList.display();
+    }
+}
+
+
+Output
+Sorted Circular Linked List:
+1 2 5 6 8 

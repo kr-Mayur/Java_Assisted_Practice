@@ -1,0 +1,81 @@
+7.Write a program in Java to traverse a doubly linked list in the forward and backward directions
+
+
+class Node {
+    int data;
+    Node next;
+    Node prev;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    private Node head;
+    private Node tail;
+
+    public DoublyLinkedList() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    // Insert a new element at the end of the doubly linked list
+    public void insert(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+    }
+
+    // Traverse the doubly linked list in the forward direction
+    public void traverseForward() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+
+    // Traverse the doubly linked list in the backward direction
+    public void traverseBackward() {
+        Node current = tail;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.prev;
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DoublyLinkedList dll = new DoublyLinkedList();
+
+        dll.insert(1);
+        dll.insert(2);
+        dll.insert(3);
+        dll.insert(4);
+        dll.insert(5);
+
+        System.out.println("Forward traversal:");
+        dll.traverseForward();
+
+        System.out.println("Backward traversal:");
+        dll.traverseBackward();
+    }
+}
+
+Output:
+Forward traversal:
+1 2 3 4 5 
+Backward traversal:
+5 4 3 2 1 
